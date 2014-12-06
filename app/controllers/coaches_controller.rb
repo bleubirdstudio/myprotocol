@@ -1,4 +1,5 @@
 class CoachesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_coach, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -43,6 +44,6 @@ private
   end
 
   def coach_params
-    params[:coach]
+    params.require(:coach).permit(:name, :business, :street, :city, :state, :zip, :phone_number, :certifications, :bio, :quote, :quoter, :shirt_size)
   end
 end
