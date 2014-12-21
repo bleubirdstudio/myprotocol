@@ -10,6 +10,16 @@
   <ul class="hmenu">
     <%= render 'devise/menu/registration_items' %>
     <%= render 'devise/menu/login_items' %>
+    <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <%= link_to 'View all profiles', profiles_path %>
+        <%= link_to 'View all coaches', coaches_path %>
+      <% else %>
+        <%= link_to 'Edit Profile', (current_user.profile.nil? or current_user.profile.new_record?) ? new_profile_path : edit_profile_path() %>
+        <%= link_to 'become a coach', new_coach_path if current_user.coach.nil? %>
+        <%= link_to 'edit', edit_coach_path(current_user.coach) if current_user.coach %>
+      <% end %>
+    <% end %>
   </ul>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

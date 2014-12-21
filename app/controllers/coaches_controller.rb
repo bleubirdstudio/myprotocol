@@ -10,7 +10,11 @@ class CoachesController < ApplicationController
   end
 
   def new
-    @coach = Coach.new
+    if current_user.coach.nil?
+      @coach = Coach.new(user: current_user)
+    else
+      redirect_to action: 'edit', id: current_user.coach.id
+    end
   end
 
   def edit
@@ -18,6 +22,9 @@ class CoachesController < ApplicationController
 
   def create
     @coach = Coach.new(coach_params)
+    
+    @coach.user = current_user
+
     if @coach.save
       redirect_to @coach, notice: 'Coach was successfully created.'
     else

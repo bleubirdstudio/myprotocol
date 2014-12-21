@@ -11,6 +11,63 @@
     </div>
   <% end %>
 
+  <div class="name">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="business">
+    <%= f.label :business %>
+    <%= f.text_field :business %>
+  </div>
+
+  <div class="street">
+    <%= f.label :street %>
+    <%= f.text_field :street %>
+  </div>
+
+  <div class="city">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="state">
+    <%= f.label :state %>
+    <%= f.select :state, Coach::STATES %>
+  </div>
+
+  <div class="zip">
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </div>
+
+  <div class="phone">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div class="certifications">
+    <%= f.label :certifications %>
+    <%= f.text_area :certifications %>
+  </div>
+
+  <div class="bio">
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+
+  <div class="quote">
+    <%= f.label :quote %>
+    <%= f.text_field :quote %>
+    <%= f.label :quoter, '- By' %>
+    <%= f.text_field :quoter %>
+  </div>
+
+  <div class="shirt">
+    <%= f.label :shirt_size %>
+    <%= f.select :shirt_size, Coach::SIZES %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
