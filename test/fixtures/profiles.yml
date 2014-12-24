@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zipcode: MyString
+  gender: MyString
+  body_type: MyString
+  birthday: 2014-12-05
+  height: 1
+  weight: 1
+  waist: 1
+  blood_type: MyString
+  veggies_per_day: MyString
+
+two:
+  zipcode: MyString
+  gender: MyString
+  body_type: MyString
+  birthday: 2014-12-05
+  height: 1
+  weight: 1
+  waist: 1
+  blood_type: MyString
+  veggies_per_day: MyString

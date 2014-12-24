@@ -1,0 +1,62 @@
+<%= form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="zipcode">
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %>
+  </div>
+
+  <div class="gender">
+    <%= f.label :gender %>
+    <%= f.select(:gender, Profile::GENDERS) %>
+  </div>
+
+  <div class="body-type">
+    <%= f.label :body_type %>
+    <%= f.select(:body_type, Profile::BODY_TYPES) %>
+  </div>
+
+  <div class="blood-type">
+    <%= f.label :blood_type %>
+    <%= f.select(:blood_type, Profile::BLOOD_TYPES) %>
+  </div>
+
+  <div class="height">
+    <%= f.label :height %>
+    <%= f.text_field :height %>
+  </div>
+
+  <div class="weight">
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+  </div>
+
+  <div class="waist">
+    <%= f.label :waist %>
+    <%= f.text_field :waist %>
+  </div>
+
+  <div class="birthday">
+    <%= f.label :birthday %>
+    <%= f.date_select(:birthday, start_year: 1940, end_year: 2014) %>
+  </div>
+
+  <div class="veggies_per_day">
+    <%= f.label :veggies_per_day, 'How many vegetables do you eat per day' %>
+    <%= f.select(:veggies_per_day, Profile::VEGGIE_OPTIONS) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
