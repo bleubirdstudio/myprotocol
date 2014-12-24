@@ -26,6 +26,11 @@
     <%= f.select(:body_type, Profile::BODY_TYPES) %>
   </div>
 
+  <div class="activity-level">
+    <%= f.label :activity_level %>
+    <%= f.select(:activity_level, Profile::ACTIVITY_LEVELS) %>
+  </div>
+
   <div class="blood-type">
     <%= f.label :blood_type %>
     <%= f.select(:blood_type, Profile::BLOOD_TYPES) %>

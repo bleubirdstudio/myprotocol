@@ -7,9 +7,11 @@ class Profile < ActiveRecord::Base
   BODY_TYPES = %w(Fat Skinny sobt)
   BLOOD_TYPES = %w(A+ A- B+ B- AB+ AB- O+ O-)
   VEGGIE_OPTIONS = ['None', 'Not a lot', 'I know I need more', 'Just right', 'More then you know']
+  ACTIVITY_LEVELS = ['Not Active', 'Moderately Active', 'Active', 'More Active']
 
   validates :zipcode, presence: true
   validates :gender, presence: true, inclusion: { in: GENDERS }
+  validates :activity_level, presence: true, inclusion: { in: ACTIVITY_LEVELS }
   validates :body_type, presence: true, inclusion: { in: BODY_TYPES }
   validates :blood_type, presence: true, inclusion: { in: BLOOD_TYPES }
   validates :veggies_per_day, presence: true, inclusion: { in: VEGGIE_OPTIONS }
