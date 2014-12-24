@@ -6,7 +6,11 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-      can :read, :all
+      unless user.new_record?
+        can [:edit, :update, :read], Profile, user_id: user.id unless current_user.profile.nil?
+        can [:edit, :update], Coach, user_id: user.id unless current_user.coach.nil?
+      end
+      can :read, Coach
     end
   end
 end
