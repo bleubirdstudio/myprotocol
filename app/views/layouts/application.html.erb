@@ -7,18 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <ul class="hmenu">
-    <%= render 'devise/menu/registration_items' %>
-    <%= render 'devise/menu/login_items' %>
-    <%= link_to 'View all profiles', profiles_path if can? :read, Profile %>
-    <%= link_to 'View all coaches', coaches_path if can? :read, Coach %>
-    <% if user_signed_in? %>
-      <%= link_to 'Create Profile', new_profile_path() unless current_user.profile %>
-      <%= link_to 'Edit Profile', edit_profile_path(current_user.profile) if current_user.profile and !current_user.profile.new_record? %>
-      <%= link_to 'become a coach', new_coach_path unless current_user.coach %>
-      <%= link_to 'edit coach', edit_coach_path(current_user.coach) if current_user.coach and !current_user.coach.new_record? %>
-    <% end %>
-  </ul>
+  
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
