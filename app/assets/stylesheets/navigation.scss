@@ -1,0 +1,23 @@
+.hmenu{
+	position: relative;
+	z-index: 2;
+	display: block;
+	list-style: none;
+	li{
+		float: right;
+		color: rgba(155,155,155,.5);
+		padding: 10px 50px;
+		a{
+			color: rgba(155,155,155, .5);
+			font-size: 16px;
+			-webkit-transition: .2s;
+			-moz-transition: .2s;
+			-ms-transition: .2s;
+			-o-transition: .2s;
+			&:hover{
+				text-decoration: none;
+				color: white
+			}
+		}
+	}
+}

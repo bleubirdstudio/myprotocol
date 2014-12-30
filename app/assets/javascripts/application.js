@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap.min
 //= require_tree .
+
+$('#myModal').on('shown.bs.modal', function () {
+	$('#myInput').focus()
+})

@@ -1,0 +1,99 @@
+body{
+	display: block;
+	height: 100%;
+	overflow-x: hidden;
+	background: #000000;
+	.no-pad{
+		padding: 0;
+	}
+	.landing{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		display: inline-block;
+		background: image-url('bg.png') 50% 50% no-repeat;
+		background-size: 100%;
+		opacity: .65;
+		z-index: 1;
+	}
+	.notice, .alert{
+		position: relative;
+		z-index: 2;
+		border: none !important;
+		padding: 0;
+	}
+	.information{
+		position: relative;
+		z-index: 2;
+		.logo{
+			position: relative;
+			width: 800px;
+			height: 140px;
+			display: block;
+			background: url(/assets/logo.png) 50% 50% no-repeat;
+			background-size: 100%;
+			margin: 200px auto 0 auto;
+		}
+		.register{
+			display: inline-block;
+			width: 100%;
+			margin-top: 100px;
+			padding: 0;
+			li{
+				display: inline-block;
+				width: 100%;
+				list-style-type: none;
+				a{
+					width: 400px;
+					background: #a90329; /* Old browsers */
+					background: -moz-linear-gradient(top,  #a90329 0%, #8f0222 44%, #6d0019 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Opera 11.10+ */
+					background: -ms-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* IE10+ */
+					background: linear-gradient(to bottom,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+					display: block;
+					margin: 0 auto;
+					text-align: center;
+					padding: 10px;
+					border-radius: 20px;
+					text-transform: uppercase;
+					color: #e6e6e6;
+					font-size: 18px;
+					font-weight: bold;
+					font-family: helvetica;
+					opacity: .85;
+					-webkit-transition: .2s;
+					-moz-transition: .2s;
+					-ms-transition: .2s;
+					-o-transition: .2s;
+					&:hover{
+						opacity: 1;
+						text-decoration: none;
+						box-shadow: 2px 2px 6px rgba(0,0,0,.65);
+					}
+				}
+			}
+		}
+		.more{
+			text-align: center;
+			a{
+				cursor: pointer;
+				color: white;
+				opacity: .5;
+				text-transform: uppercase;
+				font-size: 12px;
+				-webkit-transition: .2s;
+				-moz-transition: .2s;
+				-ms-transition: .2s;
+				-o-transition: .2s;
+				&:hover{
+					text-decoration: none;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
