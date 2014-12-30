@@ -1,7 +1,8 @@
 .hmenu{
 	position: relative;
 	z-index: 2;
-	display: block;
+	display: inline-block;
+	width: 100%;
 	list-style: none;
 	li{
 		float: right;
@@ -21,4 +22,22 @@
 			}
 		}
 	}
+}
+
+.in{
+	.modal-dialog{
+		-webkit-transform: translate(0, 0) !important;
+		-ms-transform: translate(0, 0) !important;
+		-o-transform: translate(0, 0) !important;
+		transform: translate(0, 0) !important;
+	}
+}
+.modal-dialog{
+	-webkit-transition: -webkit-transform .3s ease-out;
+	-o-transition: -o-transform .3s ease-out;
+	transition: transform .3s ease-out;
+	-webkit-transform: translate(0, -500px) !important;
+	-ms-transform: translate(0, -500px) !important;
+	-o-transform: translate(0, -500px) !important;
+	transform: translate(0, -500px) !important;
 }

@@ -33,7 +33,7 @@ body{
 			display: block;
 			background: url(/assets/logo.png) 50% 50% no-repeat;
 			background-size: 100%;
-			margin: 200px auto 0 auto;
+			margin: 100px auto 0 auto;
 		}
 		.register{
 			display: inline-block;
@@ -93,6 +93,30 @@ body{
 					text-decoration: none;
 					opacity: 1;
 				}
+			}
+		}
+		.form{
+			margin-top: 20px;
+			h2{
+				font-size: 30px;
+				text-transform: uppercase;
+				font-weight: bold;
+				font-family: helvetica;
+				color: #a90329;
+				text-align: center;
+			}
+			label{
+				width: 19%;
+				display: inline-block;
+			}
+			input{
+				float: right;
+				width: 80%;
+				display: inline-block;
+				padding: 5px;
+				border-radius: 5px;
+				border: 1px solid #cccccc;
+				outline: none;
 			}
 		}
 	}
