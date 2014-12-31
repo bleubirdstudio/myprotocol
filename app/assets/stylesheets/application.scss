@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import 'bootstrap-theme.min';
-@import 'bootstrap.min';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import 'style';
 @import 'navigation';
