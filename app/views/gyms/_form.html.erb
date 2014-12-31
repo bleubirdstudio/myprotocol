@@ -1,37 +1,47 @@
-<%= form_for(@gym) do |f| %>
+<%= form_for(@gym, html: { class: 'form-horizontal' }) do |f| %>
   <% if @gym.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@gym.errors.count, "error") %> prohibited this gym from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(@gym.errors.count, "error") %> prohibited this gym from being saved:</h2>
 
-      <ul>
+    <ul>
       <% @gym.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :street %><br>
-    <%= f.text_field :street %>
+  <div class="form-group">
+    <%= f.label :street, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :street, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
+  <div class="form-group">
+    <%= f.label :city, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :city, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.select :state, Coach::STATES %>
+  <div class="form-group">
+    <%= f.label :state, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.select :state, Coach::STATES, {}, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :zip %><br>
-    <%= f.text_field :zip %>
+  <div class="form-group">
+    <%= f.label :zip, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :zip, class: 'form-control' %>
+    </div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
