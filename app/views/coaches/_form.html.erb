@@ -1,4 +1,4 @@
-<%= form_for(@coach) do |f| %>
+<%= form_for(@coach, html: { class: 'form-horizontal' }) do |f| %>
   <% if @coach.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@coach.errors.count, "error") %> prohibited this coach from being saved:</h2>
@@ -11,64 +11,90 @@
     </div>
   <% end %>
 
-  <div class="name">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="business">
-    <%= f.label :business %>
-    <%= f.text_field :business %>
+  <div class="form-group">
+    <%= f.label :business, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :business, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="street">
-    <%= f.label :street %>
-    <%= f.text_field :street %>
+  <div class="form-group">
+    <%= f.label :street, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :street, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="city">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+  <div class="form-group">
+    <%= f.label :city, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :city, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="state">
-    <%= f.label :state %>
-    <%= f.select :state, Coach::STATES %>
+  <div class="form-group">
+    <%= f.label :state, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.select :state, Coach::STATES, {}, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="zip">
-    <%= f.label :zip %>
-    <%= f.text_field :zip %>
+  <div class="form-group">
+    <%= f.label :zip, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :zip, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="phone">
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>
+  <div class="form-group">
+    <%= f.label :phone_number, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :phone_number, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="certifications">
-    <%= f.label :certifications %>
-    <%= f.text_area :certifications %>
+  <div class="form-group">
+    <%= f.label :certifications, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_area :certifications, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="bio">
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
+  <div class="form-group">
+    <%= f.label :bio, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_area :bio, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="quote">
-    <%= f.label :quote %>
-    <%= f.text_field :quote %>
-    <%= f.label :quoter, '- By' %>
-    <%= f.text_field :quoter %>
+  <div class="form-group">
+    <%= f.label :quote, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :quote, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :quoter, '- By', class: 'col-sm-offset-4 col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <%= f.text_field :quoter, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="shirt">
-    <%= f.label :shirt_size %>
-    <%= f.select :shirt_size, Coach::SIZES %>
+  <div class="form-group">
+    <%= f.label :shirt_size, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.select :shirt_size, Coach::SIZES, {}, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
