@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_one :coach
   has_one :profile
+  has_one :gym
 end

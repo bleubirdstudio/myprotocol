@@ -2,10 +2,13 @@
   <%= render 'devise/menu/login_items' %>
   <%= link_to '<li>View all Profiles</li>'.html_safe, profiles_path if can? :read, Profile %>
   <%= link_to '<li>View all Coaches</li>'.html_safe, coaches_path if can? :read, Coach %>
+  <%= link_to '<li>View all Gyms</li>'.html_safe, gyms_path if can? :read, Gym %>
    <% if user_signed_in? %>
      <%= link_to '<li>Create Profile</li>'.html_safe, new_profile_path() unless current_user.profile %>
      <%= link_to '<li>Edit Profile</li>'.html_safe, edit_profile_path(current_user.profile) if current_user.profile and !current_user.profile.new_record? %>
      <%= link_to '<li>Become a Coach</li>'.html_safe, new_coach_path unless current_user.coach %>
      <%= link_to '<li>Edit Coach</li>'.html_safe, edit_coach_path(current_user.coach) if current_user.coach and !current_user.coach.new_record? %>
+     <%= link_to '<li>Create Gym</li>'.html_safe, new_gym_path() unless current_user.gym %>
+     <%= link_to '<li>Edit Gym</li>'.html_safe, edit_gym_path(current_user.gym) if current_user.gym and !current_user.gym.new_record? %>
    <% end %>
 </ul>

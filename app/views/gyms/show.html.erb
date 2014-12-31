@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gym.name %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @gym.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @gym.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @gym.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @gym.zip %>
+</p>
+
+<%= link_to 'Edit', edit_gym_path(@gym) %> |
+<%= link_to 'Back', gyms_path %>
