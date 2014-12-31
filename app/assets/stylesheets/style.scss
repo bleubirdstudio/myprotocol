@@ -97,26 +97,102 @@ body{
 		}
 		.form{
 			margin-top: 20px;
+			border-bottom: 1px solid #333333;
+			padding: 0 0 20px 0;
 			h2{
 				font-size: 30px;
 				text-transform: uppercase;
 				font-weight: bold;
 				font-family: helvetica;
 				color: #a90329;
+				padding-bottom: 10px;
+				margin-bottom: 30px;
+				border-bottom: 1px solid #333333;
+			}
+			.form-area{	
+				height: 33px;
+				display: block;
+				margin-bottom: 5px;
+				label{
+					width: 30%;
+					display: inline-block;
+					margin-top: 7px;
+					text-align: right;
+					margin-right: 10px;
+					color: #808080;
+					&:after{
+						content: ':';
+					}
+					&.checkbox{
+						text-align: left;
+					}
+				}
+				input{
+					float: right;
+					width: 66%;
+					display: inline-block;
+					padding: 5px;
+					border-radius: 5px;
+					border: 1px solid #cccccc;
+					outline: none;
+					background: transparent;
+					color: white;
+					font-weight: bold; 
+				}
+				input[type="submit"]{
+					margin-left: 30%;
+					width: 66%;
+					margin-top: 20px;
+					color: #a90329;
+					border: 1px solid #a90329;
+					text-transform: uppercase;
+					background: white;
+					-webkit-transition: .2s;
+					-moz-transition: .2s;
+					-ms-transition: .2s;
+					-o-transition: .2s;
+					&:hover{
+						background: #a90329;
+						color: white;
+						border: 1px solid white;
+					}
+				}
+				input[type="checkbox"]{
+					margin-left: 34%;
+					float: left;
+					width: 5%;
+					margin-top: 11px;
+				}
+
+			}
+			.login{
+				margin-left: 34%;
+				width: 66%;
+				margin-top: 20px;
+				display: inline-block;
 				text-align: center;
-			}
-			label{
-				width: 19%;
-				display: inline-block;
-			}
-			input{
-				float: right;
-				width: 80%;
-				display: inline-block;
-				padding: 5px;
-				border-radius: 5px;
-				border: 1px solid #cccccc;
-				outline: none;
+				color: rgba(155,155,155,.75);
+				a{
+					color: #a90329;
+					opacity: .85;
+					font-size: 16px;
+					font-weight: bold;
+					-webkit-transition: .2s;
+					-moz-transition: .2s;
+					-ms-transition: .2s;
+					-o-transition: .2s;
+
+					&:hover{
+						text-decoration: none;
+						opacity: 1;
+					}
+
+					&.forgot{
+						color: white;
+						font-size: 13px;
+						font-weight: normal;
+					}
+				}
 			}
 		}
 	}
