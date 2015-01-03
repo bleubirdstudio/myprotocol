@@ -3,7 +3,8 @@
 <% end %>
   <ul class="hmenu">
     <% if user_signed_in? %>
-      <%= link_to('<li><span class="logo"></span></li>'.html_safe, root_path) %><%= link_to '<li>View all Profiles</li>'.html_safe, profiles_path if can? :read, Profile %>
+      <%= link_to('<li><span class="logo"></span></li>'.html_safe, root_path) %>
+      <%= link_to '<li>View all Profiles</li>'.html_safe, profiles_path if can? :read, Profile %>
       <%= link_to '<li>Create Profile</li>'.html_safe, new_profile_path() unless current_user.profile %>
        <%= link_to '<li>Edit Profile</li>'.html_safe, edit_profile_path(current_user.profile) if current_user.profile and !current_user.profile.new_record? %>
 

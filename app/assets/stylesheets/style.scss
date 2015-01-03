@@ -9,6 +9,9 @@ body{
 	a{
 		color: #a90329;
 		font-weight: bold;
+		&:hover{
+			color: #a90329;
+		}
 	}
 	.signed_in{
 		display: none;
