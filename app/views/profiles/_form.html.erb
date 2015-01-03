@@ -11,77 +11,57 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :zipcode, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_field :zipcode, class: 'form-control' %>
-    </div>
+  <div class="form-area">
+    <%= f.label :zipcode %>
+      <%= f.text_field :zipcode %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :gender, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.select :gender, Profile::GENDERS, {}, class: 'form-control' %>
-    </div>
+  <div class="form-area">
+    <%= f.label :gender %>
+      <%= f.select :gender, Profile::GENDERS, {} %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :body_type, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.select :body_type, Profile::BODY_TYPES, {}, class: 'form-control' %>
-    </div>
+  <div class="form-area">
+    <%= f.label :body_type %>
+      <%= f.select :body_type, Profile::BODY_TYPES, {}, :class => 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :activity_level, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.select :activity_level, Profile::ACTIVITY_LEVELS, {}, class: 'form-control' %>
-    </div>
+  <div class="form-area">
+    <%= f.label :activity_level %>
+      <%= f.select :activity_level, Profile::ACTIVITY_LEVELS, {} %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :blood_type, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.select :blood_type, Profile::BLOOD_TYPES, {}, class: 'form-control' %>
-    </div>
+  <div class="form-area">
+    <%= f.label :blood_type %>
+      <%= f.select :blood_type, Profile::BLOOD_TYPES, {} %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :height, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_field :height, class: 'form-control' %>
-    </div>
+  <div class="form-area">
+    <%= f.label :height %>
+      <%= f.text_field :height %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :weight, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_field :weight, class: 'form-control' %>
-    </div>
+  <div class="form-area">
+    <%= f.label :weight %>
+      <%= f.text_field :weight %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :waist, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_field :waist, class: 'form-control' %>
-    </div>
+  <div class="form-area">
+    <%= f.label :waist %>
+      <%= f.text_field :waist %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :birthday, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
+  <div class="form-area thrice">
+    <%= f.label :birthday %>
       <%= f.date_select(:birthday, start_year: 1940, end_year: 2014) %>
-    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :veggies_per_day, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.select :veggies_per_day, Profile::VEGGIE_OPTIONS, {}, class: 'form-control' %>
-    </div>
+  <div class="form-area">
+    <%= f.label :veggies_per_day %>
+      <%= f.select :veggies_per_day, Profile::VEGGIE_OPTIONS, {} %>
   </div>
 
-  <div class="actions">
-    <%= f.submit class: 'btn btn-primary' %>
+  <div class="actions form-area">
+    <%= f.submit %>
   </div>
 <% end %>

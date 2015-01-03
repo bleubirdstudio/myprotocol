@@ -4,7 +4,7 @@ class Profile < ActiveRecord::Base
   has_many :restrictions, through: :profile_restrictions
 
   GENDERS = %w(M F)
-  BODY_TYPES = %w(Fat Skinny sobt)
+  BODY_TYPES = ['lean', 'toned', 'muscular', 'couple extra pounds', 'heavy']
   BLOOD_TYPES = %w(A+ A- B+ B- AB+ AB- O+ O-)
   VEGGIE_OPTIONS = ['None', 'Not a lot', 'I know I need more', 'Just right', 'More then you know']
   ACTIVITY_LEVELS = ['Not Active', 'Moderately Active', 'Active', 'More Active']

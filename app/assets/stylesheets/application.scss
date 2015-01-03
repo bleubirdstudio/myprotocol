@@ -14,7 +14,10 @@
  *= require_self
  */
 
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'style';
 @import 'navigation';
+@import 'profile';

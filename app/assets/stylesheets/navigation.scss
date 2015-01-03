@@ -1,24 +1,81 @@
-.hmenu{
-	position: relative;
-	z-index: 2;
+.navibar{
+	border-bottom: 1px solid white;
 	display: inline-block;
 	width: 100%;
-	list-style: none;
+	margin-bottom: 30px;
+	.hmenu{
+		position: relative;
+		z-index: 2;
+		float: left;
+		display: inline-block;
+		width: 90%;
+		list-style: none;
+		padding: 0;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		li{
+			color: rgba(155,155,155,.65);
+			padding: 0 30px;
+			display: inline-block;
+			vertical-align: middle;
+			font-family: 'Oswald', sans-serif;
+			text-transform: uppercase;
+			&:hover{
+				color:#a90329;
+			}
+			.logo{
+				position: relative;
+				width: 250px;
+				height: 50px;
+				display: block;
+				background: url(/assets/logo.png) 50% 50% no-repeat;
+				background-size: 100%;
+			}
+			a{
+				color: rgba(155,155,155, .95);
+				font-size: 16px;
+				font-weight: bold;
+				font-family: 'Oswald', sans-serif;
+				-webkit-transition: .2s;
+				-moz-transition: .2s;
+				-ms-transition: .2s;
+				-o-transition: .2s;
+				&:hover{
+					text-decoration: none;
+					color: #a90329;
+				}
+			}
+		}
+	}
+}
+.logout{
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+	float: right;
 	li{
-		float: right;
-		color: rgba(155,155,155,.5);
-		padding: 10px 50px;
+		list-style: none;
+		display: block;
+		vertical-align: middle;
+		margin-top: 29%;
+		font-size: 16px;
 		a{
-			color: rgba(155,155,155, .95);
-			font-size: 16px;
-			font-weight: bold;
+			color: #a90329;
+			opacity: .5;
+			padding: 0 30px;
+			display: inline-block;
+			vertical-align: middle;
+			font-family: 'Oswald', sans-serif;
+			text-transform: uppercase;
 			-webkit-transition: .2s;
 			-moz-transition: .2s;
 			-ms-transition: .2s;
 			-o-transition: .2s;
 			&:hover{
+				color:#a90329;
+				opacity: 1;
+				text-shadow: 0 0 10px #a90329;
 				text-decoration: none;
-				color: #a90329;
 			}
 		}
 	}
@@ -42,8 +99,8 @@
 	transform: translate(0, -500px) !important;
 }
 
-.alert{
-	position: absolute;
+.alert, .notice{
+	position: absolute !important;
 	z-index: 2;
 	border: none !important;
 	border-radius: 0 !important;
@@ -55,4 +112,7 @@
 	color: rgba(255, 0, 0, 0.4);
 	font-weight: bold;
 	font-size: 15;
+}
+.notice{
+	color: rgba(155, 155, 155, 0.6);
 }
