@@ -8,7 +8,8 @@ namespace :coaches do
         c = Coach.new(street: row[:street], state: row[:state], city: row[:city], zip: row[:zip], phone_number: row[:phone], bio: 'Test Coach', shirt_size: 'S', business: 'test coach business', name: 'test coach', user: u)
         c.save
       else
-        g = Gym.new(name: 'test coach', street: row[:street], state: row[:state], city: row[:city], zip: row[:zip])
+        g = Gym.new(name: 'test coach', street: row[:street], state: row[:state], city: row[:city], zip: row[:zip], user: u)
+        g.save
       end
     end
   end

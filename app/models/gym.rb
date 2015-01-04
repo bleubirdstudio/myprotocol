@@ -12,4 +12,18 @@ class Gym < ActiveRecord::Base
   def full_street_address
     [street, city, state, zip].join(', ')
   end
+
+  def self.closest_gyms(zipcode)
+    answer = near(zipcode, 50).to_a
+    if answer.empty?
+      answer = first(3)
+    elsif answer.size > 3
+      answer = answer.first(3)
+    else
+      while answer.size < 3
+        answer << all.sample
+      end
+    end
+    answer
+  end
 end

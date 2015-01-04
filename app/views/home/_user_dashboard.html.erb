@@ -31,5 +31,33 @@
       </div>
     </div>
   </div>
-  <%= render 'devise/menu/registration_items' %>
+  <ul class="register">
+    <%= render 'devise/menu/registration_items' %>
+  </ul>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Nearest Coaches</h2>
+    </div>
+    <div class="col-md-6">
+      <h2>Nearest Gyms</h2>
+    </div>
+  </div>
+  <% @closest_coaches.zip(@closest_gyms).each do |coach, gym| %>
+    <div class="row">
+      <div class="col-md-6">
+        <p>
+          Name: <%= coach.name %><br>
+          Business: <%= coach.business %><br>
+          Bio: <%= coach.bio %>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p>
+          Name: <%= gym.name %><br>
+          <%= gym.street %><br>
+          <%= gym.city %>, <%= gym.state %>, <%= gym.zip %>
+        </p>
+      </div>
+    </div>
+  <% end %>
 </div>
