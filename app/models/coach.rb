@@ -16,4 +16,11 @@ class Coach < ActiveRecord::Base
   # validates :quote, presence: true
   # validates :quoter, presence: true
   validates :shirt_size, inclusion: { in: SIZES }
+
+  geocoded_by :full_street_address
+  after_validation :geocode
+
+  def full_street_address
+    [street, city, state, zip].join(', ')
+  end
 end

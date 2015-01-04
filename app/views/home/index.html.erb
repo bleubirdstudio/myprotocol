@@ -1,43 +1,5 @@
-<div class="container-fluid no-pad landing"></div>	
-
-  <div class="container information">
-  <% if user_signed_in? %>
-    <div class="signed_in">
-  <% end %>
-  	<%= link_to("", root_path, :class => 'logo') %>
-  	<ul class="register">
-  		<%= render 'devise/menu/registration_items' %>
-  	</ul>
-  	<div class="more">
-  		<a data-toggle="modal" data-target="#myModal">
-  		  Learn more about MYPROTOCOL
-  		</a>
-  	</div>
-  	<!-- Button trigger modal -->
-
-
-  <!-- Modal -->
-  <div class="modal fade out" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <% if user_signed_in? %>
-    </div>
-    <%= render 'devise/menu/registration_items' %>
-    
-  <% end %>
-</div>
-
-
+<% if user_signed_in? %>
+  <%= render 'user_dashboard' %>
+<% else %>
+  <%= render 'user_not_signed_in' %>
+<% end %>
