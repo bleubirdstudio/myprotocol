@@ -1,0 +1,63 @@
+<div class="container-fluid no-pad landing"></div>
+<div class="container information">
+  <div class="signed_in">
+    <%= link_to("", root_path, :class => 'logo') %>
+    <ul class="register">
+      <%= render 'devise/menu/registration_items' %>
+    </ul>
+    <div class="more">
+      <a data-toggle="modal" data-target="#myModal">
+        Learn more about MYPROTOCOL
+      </a>
+    </div>
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade out" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul class="register">
+    <%= render 'devise/menu/registration_items' %>
+  </ul>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Nearest Coaches</h2>
+    </div>
+    <div class="col-md-6">
+      <h2>Nearest Gyms</h2>
+    </div>
+  </div>
+  <% @closest_coaches.zip(@closest_gyms).each do |coach, gym| %>
+    <div class="row">
+      <div class="col-md-6">
+        <p>
+          Name: <%= coach.name %><br>
+          Business: <%= coach.business %><br>
+          Bio: <%= coach.bio %>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p>
+          Name: <%= gym.name %><br>
+          <%= gym.street %><br>
+          <%= gym.city %>, <%= gym.state %>, <%= gym.zip %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

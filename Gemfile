@@ -6,6 +6,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
+gem 'sucker_punch', '~> 1.0'
 gem 'cancancan', '~> 1.9'
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -14,3 +15,5 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'geocoder'
+gem 'smarter_csv'

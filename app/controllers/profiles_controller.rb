@@ -51,6 +51,6 @@ private
   end
 
   def profile_params
-    params.require(:profile).permit(:zipcode, :gender, :body_type, :birthday, :height, :weight, :waist, :blood_type, :veggies_per_day)
+    params.require(:profile).permit(:zipcode, :gender, :body_type, :birthday, :height, :weight, :waist, :blood_type, :veggies_per_day, :activity_level)
   end
 end

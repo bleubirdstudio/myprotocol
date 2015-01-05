@@ -16,4 +16,25 @@ class Coach < ActiveRecord::Base
   # validates :quote, presence: true
   # validates :quoter, presence: true
   validates :shirt_size, inclusion: { in: SIZES }
+
+  geocoded_by :full_street_address
+  after_validation :geocode
+
+  def full_street_address
+    [street, city, state, zip].join(', ')
+  end
+
+  def self.closest_coaches(zipcode)
+    answer = near(zipcode, 50).to_a
+    if answer.empty?
+      answer = first(3)
+    elsif answer.size > 3
+      answer = answer.first(3)
+    else
+      while answer.size < 3
+        answer << all.sample
+      end
+    end
+    answer
+  end
 end
