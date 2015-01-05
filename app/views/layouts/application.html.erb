@@ -8,6 +8,14 @@
   <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <% if user_signed_in? %>
+    <div class="users_in">
+  <% end %>
+  <div class="container-fluid no-pad landing"></div>  
+  <div class="container-fluid no-pad landing_two"></div>  
+  <% if user_signed_in? %>
+    </div>
+  <% end %>
   <%= render 'navigation/navigation' %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

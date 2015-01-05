@@ -5,7 +5,7 @@
 	margin-bottom: 30px;
 	.hmenu{
 		position: relative;
-		z-index: 2;
+		z-index: 3;
 		float: left;
 		display: inline-block;
 		width: 90%;
@@ -51,7 +51,7 @@
 .logout{
 	display: inline-block;
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 	float: right;
 	li{
 		list-style: none;
@@ -102,7 +102,7 @@
 
 .alert, .notice{
 	position: absolute !important;
-	z-index: 2;
+	z-index: 3;
 	border: none !important;
 	border-radius: 0 !important;
 	top: 100px;
