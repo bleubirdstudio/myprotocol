@@ -20,6 +20,8 @@ class Coach < ActiveRecord::Base
   geocoded_by :full_street_address
   after_validation :geocode
 
+  mount_uploader :image, ImageUploader
+
   def full_street_address
     [street, city, state, zip].join(', ')
   end
