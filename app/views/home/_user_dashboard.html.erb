@@ -31,56 +31,58 @@
       </div>
     </div>
   </div>
-  <ul class="register">
+  <ul class="edit_register">
     <%= render 'devise/menu/registration_items' %>
   </ul>
   <% if (user_signed_in? and !current_user.profile.nil? and !current_user.profile.new_record?) %>
     <div class="row">
-      <div class="col-md-8 col-md-offset2">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Report</h3>
-          </div>
+      <div class="col-md-12 personal">
+          <h2><span style="color: rgba(255,255,255,.75);">Your </span> Protocol Plan</h2>
           <div class="panel-body">
-            <h5>Estimated BMI:</h5> <%= current_user.profile.bmi.round 2 %>
-            <h5>Estimated LBM:</h5> <%= current_user.profile.lbm.round 2 %>
+            <div class="col-md-6">
+              <div class="left"><div class="title">Estimated BMI:</div> <%= current_user.profile.bmi.round 2 %></div>
+              <div class="left"><div class="title">Estimated LBM:</div> <%= current_user.profile.lbm.round 2 %></div>
+            </div> 
 
-            <h5>Recommendations</h5>
-            <ul>
-              <li>Protein: <%= current_user.profile.protein %></li>
-              <li>BCAA: <%= current_user.profile.bcaa %></li>
-              <li>Creatine: <%= current_user.profile.creatine %></li>
-              <li>Fish Oil: <%= current_user.profile.fish_oil %></li>
-            </ul>
+            <div class="col-md-6">
+              <h3>our Recommendations</h3>
+              <ul class="recomendations">
+                <li><strong>Protein:</strong> <%= current_user.profile.protein %></li>
+                <li><strong>BCAA:</strong> <%= current_user.profile.bcaa %></li>
+                <li><strong>Creatine:</strong> <%= current_user.profile.creatine %></li>
+                <li><strong>Fish Oil:</strong> <%= current_user.profile.fish_oil %></li>
+              </ul>
+            </div>
           </div>
         </div>
+        <div class="protocol">
+            Visit <a href="http://protocolnutrition.com/">www.protocolnutrition.com</a> to see all of the products that we have available to help you to reach your personal goals.
+          </div>
       </div>
     <% end %>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Nearest Coaches</h2>
+  <div class="nearby">
+    <div class="col-md-12 no-pad">
+      <div class="col-md-3 title active" id="coach">Nearest Coaches</div>
+      <div class="col-md-3 title" id="gym">Nearest Gyms</div>
     </div>
-    <div class="col-md-6">
-      <h2>Nearest Gyms</h2>
-    </div>
-  </div>
-  <% @closest_coaches.zip(@closest_gyms).each do |coach, gym| %>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="col-md-12 dragon_master">
+    <% @closest_coaches.zip(@closest_gyms).each do |coach, gym| %>
+      <div class="col-md-12 coach active">
         <p>
           Name: <%= coach.name %><br>
           Business: <%= coach.business %><br>
           Bio: <%= coach.bio %>
         </p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-12 gym">
         <p>
           Name: <%= gym.name %><br>
           <%= gym.street %><br>
           <%= gym.city %>, <%= gym.state %>, <%= gym.zip %>
         </p>
       </div>
+    <% end %>
     </div>
-  <% end %>
+  </div>    
 </div>
