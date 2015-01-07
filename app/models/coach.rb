@@ -17,13 +17,13 @@ class Coach < ActiveRecord::Base
   # validates :quoter, presence: true
   validates :shirt_size, inclusion: { in: SIZES }
 
-  geocoded_by :full_street_address
+  geocoded_by :city_address
   after_validation :geocode
 
   mount_uploader :image, ImageUploader
 
-  def full_street_address
-    [street, city, state, zip].join(', ')
+  def city_address
+    [city, state, zip].join(', ')
   end
 
   def self.closest_coaches(zipcode)

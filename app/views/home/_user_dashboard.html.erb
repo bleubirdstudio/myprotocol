@@ -68,6 +68,7 @@
   <% @closest_coaches.zip(@closest_gyms).each do |coach, gym| %>
     <div class="row">
       <div class="col-md-6">
+        <%= image_tag coach.image_url.to_s if coach.image_url.present? %>
         <p>
           Name: <%= coach.name %><br>
           Business: <%= coach.business %><br>
@@ -75,6 +76,7 @@
         </p>
       </div>
       <div class="col-md-6">
+        <%= image_tag gym.image_url.to_s if gym.image_url.present? %>
         <p>
           Name: <%= gym.name %><br>
           <%= gym.street %><br>
