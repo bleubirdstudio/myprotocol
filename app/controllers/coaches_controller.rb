@@ -22,7 +22,7 @@ class CoachesController < ApplicationController
 
   def create
     @coach = Coach.new(coach_params)
-    
+
     @coach.user = current_user
 
     if @coach.save
@@ -51,6 +51,6 @@ private
   end
 
   def coach_params
-    params.require(:coach).permit(:name, :business, :street, :city, :state, :zip, :phone_number, :certifications, :bio, :quote, :quoter, :shirt_size)
+    params.require(:coach).permit(:name, :business, :street, :city, :state, :zip, :phone_number, :certifications, :bio, :quote, :quoter, :shirt_size, :image)
   end
 end

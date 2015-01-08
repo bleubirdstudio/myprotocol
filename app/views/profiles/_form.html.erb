@@ -61,6 +61,34 @@
       <%= f.select :veggies_per_day, Profile::VEGGIE_OPTIONS, {} %>
   </div>
 
+  <div class="row">
+    <h4>Goals</h4>
+    <% Goal.all.each do |g| %>
+      <div class="col-md-6">
+        <div class="checkbox">
+          <label>
+            <%= check_box_tag 'profile[goal_ids][]', g.id, @profile.goals.include?(g) %>
+            <%= g.title %>
+          </label>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <h4>Dietary Restrictions</h4>
+    <% Restriction.all.each do |r| %>
+      <div class="col-md-6">
+        <div class="checkbox">
+          <label>
+            <%= check_box_tag 'profile[restriction_ids][]', r.id, @profile.restrictions.include?(r) %>
+            <%= r.title %>
+          </label>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
   <div class="actions form-area">
     <%= f.submit %>
   </div>

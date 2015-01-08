@@ -35,6 +35,11 @@ GEM
       sass (~> 3.2)
     builder (3.2.2)
     cancancan (1.9.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     coffee-rails (4.0.1)
@@ -138,6 +143,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
   cancancan (~> 1.9)
+  carrierwave
   coffee-rails (~> 4.0.0)
   devise
   geocoder
