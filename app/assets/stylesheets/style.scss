@@ -13,6 +13,16 @@ body{
 			color: #a90329;
 		}
 	}
+	h2{
+		font-size: 30px;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-family: helvetica;
+		color: #a90329;
+		padding-bottom: 10px;
+		margin-bottom: 30px;
+		border-bottom: 1px solid #333333;
+	}
 	.signed_in{
 		display: none;
 	}
@@ -24,7 +34,7 @@ body{
 		left: 0;
 		display: inline-block;
 		background: image-url('bg.png') 50% 50% no-repeat fixed;
-		background-size: 100%;
+		background-size: cover;
 		opacity: .65;
 		z-index: 0;
 	}
@@ -36,12 +46,12 @@ body{
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			min-height: 1000px;
+			min-height: 800px;
 			top: 50px;
 			left: 0;
 			display: inline-block;
 			background: image-url('bg_2.png') 50% 50% no-repeat;
-			background-size: 100%;
+			background-size: cover;
 			opacity: .65;
 			z-index: 1;
 		}
@@ -54,6 +64,38 @@ body{
 		z-index: 3;
 		border: none !important;
 		padding: 0;
+	}
+	.edit_register{
+		padding: 0;
+		margin: 0;
+		li{
+			display: inline-block;
+			a{
+				opacity: .75;
+				-webkit-transition: .2s;
+				-moz-transition: .2s;
+				-ms-transition: .2s;
+				-o-transition: .2s;
+				&:before{
+					content: "\e008";
+					display: inline-block;
+					font-family: 'Glyphicons Halflings';
+					margin-right: 10px;
+					padding: 7px 9px 8px 11px;
+					background: transparent;
+					border-radius: 50%;
+					border: 2px solid #a90329;
+				}
+				&:hover{
+					opacity: 1;
+					text-decoration: none;
+					&:before{
+						background: #a90329;
+						color: white;
+					}
+				}
+			}
+		}
 	}
 	.information{
 		position: relative;
@@ -175,10 +217,10 @@ body{
 					margin-left: 30%;
 					width: 66%;
 					margin-top: 20px;
-					color: #a90329;
-					border: 1px solid #a90329;
+					color: white;
+					border: 1px solid white;
 					text-transform: uppercase;
-					background: white;
+					background: transparent;
 					-webkit-transition: .2s;
 					-moz-transition: .2s;
 					-ms-transition: .2s;
@@ -217,6 +259,7 @@ body{
 					&:hover{
 						text-decoration: none;
 						opacity: 1;
+						text-decoration: none;
 					}
 
 					&.forgot{
@@ -228,5 +271,109 @@ body{
 			}
 		}
 	}
-	
+	.personal{
+		border-bottom: 1px solid #333333;
+		margin-bottom: 20px;
+		margin-top: 30px; 
+	}
+	.protocol{
+		margin-bottom: 40px;
+		color: rgba(255,255,255,.85);
+	}
+	.panel-body{
+		color: white;
+		.left{
+			font-size: 25px;
+			text-transform: uppercase;
+			padding: 10px 0;
+			font-weight: bold;
+			letter-spacing: .5px;
+			border-bottom: 1px solid #333333;
+			&:last-of-type{
+				border-bottom: none;
+			}
+			.title{
+				display: inline-block;
+				opacity: .5;
+			}
+		}
+		h3{
+			font-size: 25px;
+			text-transform: uppercase;
+			padding: 14px 0;
+			font-weight: bold;
+			letter-spacing: .5px;
+			border-bottom: 1px solid #333333;
+			margin: 0;
+			color: #a90329;
+		}
+		.recomendations{
+			margin-top: 20px;
+			margin-bottom: 20px;
+			li{
+				margin: 5px 0;
+				strong{
+					opacity: .5;
+					padding-right: 10px;
+				}
+			}
+		}
+	}
+	.nearby{
+		position: relative;
+		z-index: 4;
+		margin-top: 50px;
+		.title{	
+			display: inline-block;
+			text-align: center; 
+			font-size: 20px;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-family: helvetica;
+			color: #a90329;
+			padding: 10px;
+			margin-right: 10px;
+			border: 1px solid white;
+			cursor: pointer;
+			border-radius: 10px;
+			-webkit-transition: .2s;
+			-moz-transition: .2s;
+			-ms-transition: .2s;
+			-o-transition: .2s;
+			&:hover{
+				background: rgba(169, 3, 41, 0.5);
+				color: white;
+			}
+			&.active{
+				background: #a90329;
+				color: white;
+			}
+		}
+		.coach, .gym{
+			display: none;
+			margin: 0 0 5px 0;
+			padding: 5px 0;
+			color: white;
+			p{
+				margin: 10px 0;
+			}
+			&.active{
+				display: inline-block;
+				border-top: 1px solid #333333;
+				&:first-of-type{
+					border: none !important;
+				}
+				&:nth-of-type(2){
+					border: none !important;
+				}
+			}
+		}
+		.dragon_master{
+			margin-top: 30px;
+		}
+	}
+}
+
+::selection{
+	background: #cccccc;
 }

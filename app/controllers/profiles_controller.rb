@@ -26,7 +26,7 @@ class ProfilesController < ApplicationController
     @profile.user = current_user
 
     if @profile.save
-      redirect_to @profile, notice: 'Profile was successfully created.'
+      redirect_to @profile, notice: 'poop.'
     else
       render :new
     end

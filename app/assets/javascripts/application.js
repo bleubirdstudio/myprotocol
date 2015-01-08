@@ -19,3 +19,16 @@
 $('#myModal').on('shown.bs.modal', function () {
 	$('#myInput').focus()
 })
+
+$(function() {                      
+  $("#coach").click(function() {  
+  	$('.active').removeClass('active');
+    $(this).addClass("active");
+    $('.coach').addClass('active');    
+  })
+  $("#gym").click(function() {  
+  	$('.active').removeClass('active');
+    $(this).addClass("active");    
+    $('.gym').addClass('active');
+  })
+});
