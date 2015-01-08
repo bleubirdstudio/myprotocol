@@ -26,7 +26,7 @@ class ProfilesController < ApplicationController
     @profile.user = current_user
 
     if @profile.save
-      redirect_to @profile, notice: 'poop.'
+      redirect_to @profile, notice: 'Profile was successfully updated.'
     else
       render :new
     end
@@ -51,6 +51,6 @@ private
   end
 
   def profile_params
-    params.require(:profile).permit(:zipcode, :gender, :body_type, :birthday, :height, :weight, :waist, :blood_type, :veggies_per_day, :activity_level)
+    params.require(:profile).permit(:zipcode, :gender, :body_type, :birthday, :height, :weight, :waist, :blood_type, :veggies_per_day, :activity_level, {goal_ids: [], restriction_ids: []})
   end
 end

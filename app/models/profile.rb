@@ -2,6 +2,8 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   has_many :profile_restrictions
   has_many :restrictions, through: :profile_restrictions
+  has_many :profile_goals
+  has_many :goals, through: :profile_goals
 
   GENDERS = %w(M F)
   BODY_TYPES = ['lean', 'toned', 'muscular', 'couple extra pounds', 'heavy']

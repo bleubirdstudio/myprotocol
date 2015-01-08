@@ -1,4 +1,5 @@
 <div class="container-fluid no-pad landing"></div>
+<div class="container-fluid no-pad landing_two"></div>
 <div class="container information">
   <div class="signed_in">
     <%= link_to("", root_path, :class => 'logo') %>
@@ -67,24 +68,24 @@
       <div class="col-md-3 title" id="gym">Nearest Gyms</div>
     </div>
     <div class="col-md-12 dragon_master">
-      <%= image_tag coach.image_url.to_s if coach.image_url.present? %>
       <% @closest_coaches.zip(@closest_gyms).each do |coach, gym| %>
-      <div class="col-md-12 coach active">
-        <p>
-          Name: <%= coach.name %><br>
-          Business: <%= coach.business %><br>
-          Bio: <%= coach.bio %>
-        </p>
-      </div>
-      <div class="col-md-12 gym">
-        <%= image_tag gym.image_url.to_s if gym.image_url.present? %>
-        <p>
-          Name: <%= gym.name %><br>
-          <%= gym.street %><br>
-          <%= gym.city %>, <%= gym.state %>, <%= gym.zip %>
-        </p>
-      </div>
-    <% end %>
+        <div class="col-md-12 coach active">
+          <%= image_tag coach.image_url.to_s if coach.image_url.present? %>
+          <p>
+            Name: <%= coach.name %><br>
+            Business: <%= coach.business %><br>
+            Bio: <%= coach.bio %>
+          </p>
+        </div>
+        <div class="col-md-12 gym">
+          <%= image_tag gym.image_url.to_s if gym.image_url.present? %>
+          <p>
+            Name: <%= gym.name %><br>
+            <%= gym.street %><br>
+            <%= gym.city %>, <%= gym.state %>, <%= gym.zip %>
+          </p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -27,17 +27,13 @@ class GymsController < ApplicationController
     end
   end
 
-
-
   def update
     if current_user.gym.update(gym_params)
-      redirect_to @gym, notice: 'Gym was successfully updated.'
+      redirect_to current_user.gym, notice: 'Gym was successfully updated.'
     else
       render :edit
     end
   end
-
-
 
   def destroy
     current_user.gym.destroy
