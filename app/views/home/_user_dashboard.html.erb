@@ -1,4 +1,3 @@
-<div class="container-fluid no-pad landing"></div>
 <div class="container-fluid no-pad landing_two"></div>
 <div class="container information">
   <div class="signed_in">
@@ -71,19 +70,19 @@
       <% @closest_coaches.zip(@closest_gyms).each do |coach, gym| %>
         <div class="col-md-12 coach active">
           <%= image_tag coach.image_url.to_s if coach.image_url.present? %>
-          <p>
-            Name: <%= coach.name %><br>
-            Business: <%= coach.business %><br>
-            Bio: <%= coach.bio %>
-          </p>
+          <div class="coach_info">
+            <div class="name"><span>Name:</span> <%= coach.name %></div>
+            <div class="business"><span>Business:</span> <%= coach.business %></div>
+            <div class="bio">Bio: &nbsp;<span><%= coach.bio %></span></div>
+          </div>
         </div>
         <div class="col-md-12 gym">
           <%= image_tag gym.image_url.to_s if gym.image_url.present? %>
-          <p>
-            Name: <%= gym.name %><br>
-            <%= gym.street %><br>
-            <%= gym.city %>, <%= gym.state %>, <%= gym.zip %>
-          </p>
+          <div class="gym_info">
+            <div class="name"><span>Name:</span><%= gym.name %></div>
+            <div class="business"><span>Business:</span> <%= gym.street %></div>
+            <div class="bio"><span>Location:</span> &nbsp;<%= gym.city %>, <%= gym.state %>, <%= gym.zip %></div>
+          </div>
         </div>
       <% end %>
     </div>

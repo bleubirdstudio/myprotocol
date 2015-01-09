@@ -1,41 +1,43 @@
-<h1>Listing coaches</h1>
+<div class="container-fluid no-pad landing_two"></div>
+<div id="profiles">
+  <h2>Listing coaches</h2>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>email</th>
-      <th>business</th>
-      <th>street</th>
-      <th>city</th>
-      <th>state</th>
-      <th>zip</th>
-      <th>phone_number</th>
-      <th>shirt size</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @coaches.each do |coach| %>
+  <table class="table profiler">
+    <thead>
       <tr>
-        <td><%= coach.name %></td>
-        <td><%= coach.user.email %></td>
-        <td><%= coach.business %></td>
-        <td><%= coach.street %></td>
-        <td><%= coach.city %></td>
-        <td><%= coach.state %></td>
-        <td><%= coach.zip %></td>
-        <td><%= coach.phone_number %></td>
-        <td><%= coach.shirt_size %></td>
-        <td><%= link_to 'Show', coach %></td>
-        <td><%= link_to 'Edit', edit_coach_path(coach) %></td>
-        <td><%= link_to 'Destroy', coach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>email</th>
+        <th>business</th>
+        <th>street</th>
+        <th>city</th>
+        <th>state</th>
+        <th>zip</th>
+        <th>phone_number</th>
+        <th>shirt size</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @coaches.each do |coach| %>
+        <tr>
+          <td><%= coach.name %></td>
+          <td><%= coach.user.email %></td>
+          <td><%= coach.business %></td>
+          <td><%= coach.street %></td>
+          <td><%= coach.city %></td>
+          <td><%= coach.state %></td>
+          <td><%= coach.zip %></td>
+          <td><%= coach.phone_number %></td>
+          <td><%= coach.shirt_size %></td>
+          <td class="buttons"><%= link_to 'Edit', edit_coach_path(coach) %></td>
+          <td class="buttons"><%= link_to 'Destroy', coach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Coach', new_coach_path %>
+  <br>
+
+  <div class="col-md-12 no-pad"><%= link_to 'New Coach', new_coach_path, :class => "new" %></div>
+</div>

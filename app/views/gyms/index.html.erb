@@ -1,33 +1,35 @@
-<h1>Listing gyms</h1>
+<div class="container-fluid no-pad landing_two"></div>
+<div id="profiles">
+  <h2>Listing gyms</h2>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Street</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @gyms.each do |gym| %>
+  <table class="table profiler">
+    <thead>
       <tr>
-        <td><%= gym.name %></td>
-        <td><%= gym.street %></td>
-        <td><%= gym.city %></td>
-        <td><%= gym.state %></td>
-        <td><%= gym.zip %></td>
-        <td><%= link_to 'Show', gym %></td>
-        <td><%= link_to 'Edit', edit_gym_path(gym) %></td>
-        <td><%= link_to 'Destroy', gym, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @gyms.each do |gym| %>
+        <tr>
+          <td><%= gym.name %></td>
+          <td><%= gym.street %></td>
+          <td><%= gym.city %></td>
+          <td><%= gym.state %></td>
+          <td><%= gym.zip %></td>
+          <td class="buttons"><%= link_to 'Edit', edit_gym_path(gym) %></td>
+          <td class="buttons"><%= link_to 'Destroy', gym, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Gym', new_gym_path %>
+  <br>
+
+  <div class="col-md-12 no-pad"><%= link_to 'New Gym', new_gym_path, :class => "new" %></div>
+</div>

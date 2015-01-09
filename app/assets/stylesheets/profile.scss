@@ -67,6 +67,19 @@
 				color: white;
 				font-weight: bold; 
 			}
+			textarea{
+				float: right;
+				width: 66%;
+				height: 100px;
+				display: inline-block;
+				padding: 5px;
+				border-radius: 5px;
+				border: 1px solid #cccccc;
+				outline: none;
+				background: transparent;
+				color: white;
+				font-weight: bold; 
+			}
 			input[type="submit"]{
 				margin-left: 30%;
 				width: 66%;
@@ -101,6 +114,27 @@
 				line-height: 1.428571429;
 				color: white; 
 				background-color: transparent;
+			}
+			.checkarea{
+				display: inline-block;
+				float: right;
+				width: 66%;
+				height: 34px;
+				padding: 6px 12px;
+				font-size: 14px;
+				line-height: 1.428571429;
+				color: white; 
+				background-color: transparent;
+			}
+			input[type="checkbox"]{
+				margin-left: -30px !important;
+				margin-top: -5px !important;
+				display: inline-block;
+				padding: 10px;
+				height: 30px;
+				width: 30px;
+				background-color: black;
+				color: black;
 			}
 			&.thrice{
 				select{
@@ -153,6 +187,7 @@
 						padding-top: 25px;
 						padding-bottom: 25px;
 						padding-left: 9px;
+						padding-right: 10px;
 						width: 100%;
 						color: #a90329;
 						opacity: .75;
@@ -195,3 +230,4 @@
 		}
 	}
 }
+

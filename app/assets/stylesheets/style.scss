@@ -1,6 +1,7 @@
 body{
 	display: block;
 	height: 100%;
+	min-width: 1300px;
 	overflow-x: hidden;
 	background: #000000;
 	.no-pad{
@@ -39,25 +40,17 @@ body{
 		z-index: 0;
 	}
 	.landing_two{
-		opacity: 0;
-	}
-	.users_in{
-		.landing_two{
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			min-height: 800px;
-			top: 50px;
-			left: 0;
-			display: inline-block;
-			background: image-url('bg_2.png') 50% 50% no-repeat;
-			background-size: cover;
-			opacity: .65;
-			z-index: 1;
-		}
-		.landing{
-			opacity: 0;
-		}
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		min-height: 800px;
+		top: 50px;
+		left: 0;
+		display: inline-block;
+		background: image-url('bg_2.png') 50% 50% no-repeat;
+		background-size: cover;
+		opacity: .65;
+		z-index: 1;
 	}
 	.notice, .alert{
 		position: relative;
@@ -349,7 +342,26 @@ body{
 				color: white;
 			}
 		}
-		.coach, .gym{
+		.coach{
+			display: none;
+			margin: 0 0 5px 0;
+			padding: 5px 0;
+			color: white;
+			p{
+				margin: 10px 0;
+			}
+			&.active{
+				display: inline-block;
+				border-top: 1px solid #333333;
+				&:first-of-type{
+					border: none !important;
+				}
+				&:nth-of-type(2){
+					border: none !important;
+				}
+			}
+		}
+		.gym{
 			display: none;
 			margin: 0 0 5px 0;
 			padding: 5px 0;
@@ -370,6 +382,71 @@ body{
 		}
 		.dragon_master{
 			margin-top: 30px;
+			.coach{
+				img{
+					width: 200px;
+					display: inline-block;
+					border-radius: 20px;
+				}
+				.coach_info{
+					margin: 10px 0 0 0 !important;
+					display: inline-block;
+					width: 80%;
+					float: right;
+					.name, .business{
+						display: block;
+						border-bottom: 1px solid white;
+						padding-bottom: 10px;
+						margin-bottom: 10px;
+						font-size: 18px;
+						text-transform: uppercase;
+						font-weight: bold;
+						color: #a90329;
+						span{
+							color: rgba(255,255,255,.85);
+						}
+					}
+					.bio{
+						display: block;
+						padding-bottom: 10px;
+						font-size: 18px;
+						text-transform: uppercase;
+						font-weight: bold;
+						color: #a90329;
+						span{
+							font-size: 12px;
+							font-weight: bold;
+							color: white;
+						}
+					}
+				}
+			}
+			.gym{
+				img{
+					width: 200px;
+					display: inline-block;
+					border-radius: 20px;
+				}
+				.gym_info{
+					margin: 10px 0 0 0 !important;
+					display: inline-block;
+					width: 80%;
+					float: right;
+					.name, .business, .bio{
+						display: block;
+						border-bottom: 1px solid white;
+						padding-bottom: 10px;
+						margin-bottom: 10px;
+						font-size: 18px;
+						text-transform: uppercase;
+						font-weight: bold;
+						color: #a90329;
+						span{
+							color: rgba(255,255,255,.85);
+						}
+					}
+				}
+			}
 		}
 	}
 }
