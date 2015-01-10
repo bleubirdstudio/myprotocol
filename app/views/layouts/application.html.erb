@@ -5,7 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>`
+  <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
   
@@ -15,5 +16,6 @@
   <div class="container">
     <%= yield %>
   </div>
+  <footer><div class="left"><a href="http://protocolnutrition.com/">2015 Protocol Nutrition</a></div><div class="right">* These statements have not been evaluated by the Food and Drug Administration. <br /> This product is not intended to diagnose, treat, cure, or prevent any disease</div></footer>
 </body>
 </html>
