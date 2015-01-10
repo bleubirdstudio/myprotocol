@@ -1,4 +1,67 @@
-<p id="notice"><%= notice %></p>
+<div class="pumped">
+<h2>
+  <strong>Name:</strong>
+  <%= @coach.name %>
+</h2>
 
+<h2>
+  <strong>business:</strong>
+  <%= @coach.business %>
+</h2>
+
+<h2>
+  <strong>Street:</strong>
+  <%= @coach.street %>
+</h2>
+
+<h2>
+  <strong>City:</strong>
+  <%= @coach.city %>
+</h2>
+
+<h2>
+  <strong>State:</strong>
+  <%= @coach.state %>
+</h2>
+
+<h2>
+  <strong>Zip:</strong>
+  <%= @coach.zip %>
+</h2>
+
+<h2>
+  <strong>Phone:</strong>
+  <%= @coach.phone_number %>
+</h2>
+
+<h2>
+  <strong>Certifications:</strong>
+  <%= @coach.certifications %>
+</h2>
+
+<h2>
+  <strong>Bio:</strong>
+  <span><%= @coach.bio %></span>
+</h2>
+
+<h2>
+  <strong>Quote:</strong>
+  <%= @coach.quote %>
+</h2>
+
+<h2>
+  <strong>Quoter:</strong>
+  <%= @coach.quoter %>
+</h2>
+
+<h2>
+  <strong>Shirt:</strong>
+  <%= @coach.shirt_size %>
+</h2>
+<div class="links">
 <%= link_to 'Edit', edit_coach_path(@coach) %> |
 <%= link_to 'Back', coaches_path %>
+</div>
+
+</div>
+

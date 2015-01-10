@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<div class="pumped">
+<h2>
   <strong>Name:</strong>
   <%= @gym.name %>
-</p>
+</h2>
 
-<p>
+<h2>
   <strong>Street:</strong>
   <%= @gym.street %>
-</p>
+</h2>
 
-<p>
+<h2>
   <strong>City:</strong>
   <%= @gym.city %>
-</p>
+</h2>
 
-<p>
+<h2>
   <strong>State:</strong>
   <%= @gym.state %>
-</p>
+</h2>
 
-<p>
+<h2>
   <strong>Zip:</strong>
   <%= @gym.zip %>
-</p>
-
-<%= link_to 'Edit', edit_gym_path(@gym) %> |
-<%= link_to 'Back', gyms_path %>
+</h2>
+<div class="links">
+  <%= link_to 'Edit', edit_gym_path(@gym) %>&nbsp;&nbsp;/&nbsp;&nbsp;
+  <%= link_to 'Back', gyms_path %>
+</div>  
+</div>
