@@ -9,12 +9,14 @@
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
-  
+  <div class="wrapper">
   <%= render 'navigation/navigation' %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <div class="container">
     <%= yield %>
+  </div>
+  <div class="push"></div>
   </div>
   <footer><a href="http://protocolnutrition.com/">2015 Protocol Nutrition</a>
   <br />  * These statements have not been evaluated by the Food and Drug Administration.This product is not intended to diagnose, treat, cure, or prevent any disease</footer>
